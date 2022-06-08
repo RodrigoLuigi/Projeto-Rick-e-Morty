@@ -85,6 +85,7 @@ export class FavoritesView extends Favorites {
     super(root)
 
     this.cardWrapper = this.root.querySelector('.card-wrapper')
+    this.page = 1
 
     this.update()
     // this.onadd()
@@ -107,7 +108,7 @@ export class FavoritesView extends Favorites {
     const addButtom = this.root.querySelector('.search .next-page')
 
     addButtom.onclick = () => {
-
+      this.page += 1;
       this.add()
     }
   }
@@ -119,6 +120,8 @@ export class FavoritesView extends Favorites {
       if(this.id > 6){
         this.id = this.entries[0].id - 7     
         
+       this.page += -1;
+
         this.add()
       }
       
@@ -164,18 +167,24 @@ export class FavoritesView extends Favorites {
       //   }
       // }
     })
-
-    this.verifyPage()
+    this.updatePage()
+    this.verifyPreview()
   }
 
-  verifyPage() {
+  verifyPreview() {
     if (this.id <= 6) {
-      this.root.querySelector('.down-page span').classList.add('hide')
+      this.root.querySelector('.down-page').classList.add('hide')
+      this.root.querySelector('.down-page2').classList.remove('hide')
       // this.root.querySelector('.down-page').style.background = '#000'
     } else {
-      this.root.querySelector('.down-page span').classList.remove('hide')
+      this.root.querySelector('.down-page2').classList.add('hide')
+      this.root.querySelector('.down-page').classList.remove('hide')
       // this.root.querySelector('.down-page').style.background = 'goldenrod'
     }
+  }
+
+  updatePage(){
+    this.root.querySelector('.search p').textContent = `Page ${this.page}`
   }
 
   createCard() {

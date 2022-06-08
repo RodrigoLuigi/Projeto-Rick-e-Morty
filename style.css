@@ -43,9 +43,7 @@ body {
   display: none;
 }
 
-.page {
-  padding: 4rem;
-
+#page {
   max-width: 120rem;
   min-height: 100vh;
   margin: 0 auto;
@@ -88,7 +86,7 @@ header {
   justify-content: space-between;
   width: 25rem;
 
-  margin: 2rem auto;
+  margin: 2rem auto 0;
 }
 
 .search input {
@@ -96,6 +94,12 @@ header {
   border: 1px solid #ccc;
   border-radius: .4rem 0 0 .4rem;
   padding: 0 .8rem;
+}
+
+.search p{
+  font-size: 2rem;
+  font-weight: bold;
+  color: greenyellow;
 }
 
 .search button {
@@ -111,10 +115,12 @@ header {
   cursor: pointer;
 
   font-size: 10rem;
+  transition: all 200ms;
 }
 
 .search button:hover {
-  filter: brightness(1.1);
+  color: rgb(134, 3, 3);
+  transform: scale(1.2);
 }
 
 /* ========== MAIN ============ */
@@ -129,7 +135,7 @@ main {
   flex-direction: column;
   gap: 4rem;
 
-  padding: 5rem 0;
+  padding: 2rem 0;
 }
 
 .card {
@@ -188,12 +194,15 @@ main {
   text-decoration: none;
   color: var(--text-color);
 }
+
+
 @media (min-width: 1278px){
   .card-wrapper{
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 }
+
 @media (min-width: 40em) {
   .logo{
     flex-direction: row;
