@@ -38,7 +38,7 @@ body {
 #page {
   max-width: 120rem;
   min-height: 100vh;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
 }
 
 /* ===== HERO ===== */
