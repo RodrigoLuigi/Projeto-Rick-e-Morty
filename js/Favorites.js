@@ -39,31 +39,6 @@ export class Favorites {
     console.log(this.entries)
   }
 
-  // async add(characterId) {
-  //   try {
-  //     const character = await RickAndMortyCharacter.search(characterId)
-  //     console.log(character)
-  //     if (character.id === undefined) {
-  //       throw new Error('Personagem não encontrado!')
-  //     }
-
-  //     this.entries = [character, ...this.entries]
-  //     this.update()
-
-  //   } catch (error) {
-  //     alert(error.message)
-  //   }
-  // }
-
-  // delete(character) {
-  //   const filteredEntries = this.entries.filter(entry => entry.name !== character.name)
-
-  //   this.entries = filteredEntries
-  //   console.log(this.entries)
-
-  //   this.update()
-  // }
-
   async add() {
     const entrada = []
 
@@ -88,22 +63,12 @@ export class FavoritesView extends Favorites {
     this.page = 1
 
     this.update()
-    // this.onadd()
     this.nextPage()
     this.previewsPage()
     this.add()
 
   }
-  // onadd() {
-  //   const addButtom = this.root.querySelector('.search button')
-  //   addButtom.onclick = () => {
-  //     const {
-  //       value
-  //     } = this.root.querySelector('.search input')
-  //     this.add(value);
-  //   }
-  // }
-
+  
   nextPage() {
     const addButtom = this.root.querySelector('.search .next-page')
 
@@ -184,7 +149,7 @@ export class FavoritesView extends Favorites {
   }
 
   updatePage(){
-    this.root.querySelector('.search p').textContent = `Page ${this.page}`
+    this.root.querySelector('.search p').textContent = `Page ${this.page} / 138`
   }
 
   createCard() {
@@ -192,7 +157,7 @@ export class FavoritesView extends Favorites {
 
     card.innerHTML = `
     <div class="card-image">
-      <img class="character-image" src="https://rickandmortyapi.com/api/character/avatar/43.jpeg"
+      <img src="https://rickandmortyapi.com/api/character/avatar/43.jpeg"
         alt="Imagem do ">
     </div>
 
