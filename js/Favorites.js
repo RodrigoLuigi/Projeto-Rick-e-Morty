@@ -169,12 +169,12 @@ export class FavoritesView extends Favorites {
 
       <div class="section">
         <span class="scale-gray">Último local conhecido:</span>
-        <a class="location" href=""><p>Citadel of Ricks</p></a>
+        <div class="location"><p class="location">Citadel of Ricks</p></div>
       </div>
 
       <div class="section">
         <span class="scale-gray">Visto pela última vez em:</span>
-        <a class="episode" href=""><p>The Ricklantis Mixup</p></a>
+        <div class="episode"><p>The Ricklantis Mixup</p></div>
       </div>
     </div>
     `
